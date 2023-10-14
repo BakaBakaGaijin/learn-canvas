@@ -5,7 +5,25 @@ function draw() {
   if (canvas.getContext) {
     const ctx = canvas.getContext("2d");
 
-    for (let i = 0; i < 6; i++) {
+    ctx.fillStyle = "#FD0"; // yellow
+    ctx.fillRect(0, 0, 75, 75);
+    ctx.fillStyle = "#6C0"; // green
+    ctx.fillRect(75, 0, 75, 75);
+    ctx.fillStyle = "#09F"; // blue
+    ctx.fillRect(0, 75, 75, 75);
+    ctx.fillStyle = "#F30"; // red
+    ctx.fillRect(75, 75, 75, 75);
+    ctx.fillStyle = "#FFF";
+
+    ctx.globalAlpha = 0.2;
+
+    for (let i = 0; i < 7; i++) {
+      ctx.beginPath();
+      ctx.arc(75, 75, 10 + 10 * i, 0, Math.PI * 2, true);
+      ctx.fill();
+    }
+
+    /* for (let i = 0; i < 6; i++) {
       for (let j = 0; j < 6; j++) {
         ctx.strokeStyle =
           "rgb(0," +
@@ -17,7 +35,7 @@ function draw() {
         ctx.arc(12.5 + j * 25, 12.5 + i * 25, 10, 0, Math.PI * 2, true);
         ctx.stroke();
       }
-    }
+    } */
 
     /* for (let i = 0; i < 6; i++) {
       for (let j = 0; j < 6; j++) {
