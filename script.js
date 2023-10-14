@@ -7,6 +7,20 @@ function draw() {
 
     for (let i = 0; i < 6; i++) {
       for (let j = 0; j < 6; j++) {
+        ctx.strokeStyle =
+          "rgb(0," +
+          Math.floor(255 - 42.5 * i) +
+          "," +
+          Math.floor(255 - 42.5 * j) +
+          ")";
+        ctx.beginPath();
+        ctx.arc(12.5 + j * 25, 12.5 + i * 25, 10, 0, Math.PI * 2, true);
+        ctx.stroke();
+      }
+    }
+
+    /* for (let i = 0; i < 6; i++) {
+      for (let j = 0; j < 6; j++) {
         ctx.fillStyle =
           "rgb(" +
           Math.floor(255 - 42.5 * i) +
@@ -15,7 +29,7 @@ function draw() {
           ",0)";
         ctx.fillRect(j * 25, i * 25, 25, 25);
       }
-    }
+    } */
 
     /* const p = new Path2D("M 10 10 h 80 v 80 h -80 Z");
     ctx.fill(p); */
