@@ -5,7 +5,17 @@ function draw() {
   if (canvas.getContext) {
     const ctx = canvas.getContext("2d");
 
-    roundedRect(ctx, 12, 12, 150, 150, 15);
+    const rectangle = new Path2D();
+    rectangle.rect(10, 10, 50, 50);
+
+    const circle = new Path2D();
+    circle.moveTo(125, 35);
+    circle.arc(100, 35, 25, 0, 2 * Math.PI);
+
+    ctx.stroke(rectangle);
+    ctx.fill(circle);
+
+    /* roundedRect(ctx, 12, 12, 150, 150, 15);
     roundedRect(ctx, 19, 19, 150, 150, 9);
     roundedRect(ctx, 53, 53, 49, 33, 10);
     roundedRect(ctx, 53, 119, 49, 16, 6);
@@ -76,7 +86,7 @@ function draw() {
       ctx.arcTo(x + width, y, x + width - radius, y, radius);
       ctx.arcTo(x, y, x, y + radius, radius);
       ctx.stroke();
-    }
+    } */
 
     /* ctx.rect(0, 0, 100, 100);
     ctx.fill();
