@@ -5,7 +5,15 @@ function draw() {
   if (canvas.getContext) {
     const ctx = canvas.getContext("2d");
 
-    ctx.fillStyle = "rgb(255, 221,0)"; // yellow;
+    for (let i = 0; i < 10; i++) {
+      ctx.lineWidth = 1 + i;
+      ctx.beginPath();
+      ctx.moveTo(5 + i * 14, 5);
+      ctx.lineTo(5 + i * 14, 140);
+      ctx.stroke();
+    }
+
+    /* ctx.fillStyle = "rgb(255, 221,0)"; // yellow;
     ctx.fillRect(0, 0, 150, 37.5);
     ctx.fillStyle = "rgb(102, 204,0)"; // green;
     ctx.fillRect(0, 37.5, 150, 37.5);
@@ -20,7 +28,7 @@ function draw() {
       for (let j = 0; j < 4; j++) {
         ctx.fillRect(5 + i * 14, 5 + j * 37.5, 14, 27.5);
       }
-    }
+    } */
 
     /* ctx.fillStyle = "#FD0"; // yellow
     ctx.fillRect(0, 0, 75, 75);
