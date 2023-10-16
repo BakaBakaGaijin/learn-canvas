@@ -5,13 +5,33 @@ function draw() {
   if (canvas.getContext) {
     const ctx = canvas.getContext("2d");
 
-    for (let i = 0; i < 10; i++) {
+    const lineCap = ["butt", "round", "square"];
+
+    ctx.strokeStyle = "#09f";
+    ctx.beginPath();
+    ctx.moveTo(10, 10);
+    ctx.lineTo(140, 10);
+    ctx.moveTo(10, 140);
+    ctx.lineTo(140, 140);
+    ctx.stroke();
+
+    ctx.strokeStyle = "black";
+    for (let i = 0; i < lineCap.length; i++) {
+      ctx.lineWidth = 15;
+      ctx.lineCap = lineCap[i];
+      ctx.beginPath();
+      ctx.moveTo(25 + i * 50, 10);
+      ctx.lineTo(25 + i * 50, 140);
+      ctx.stroke();
+    }
+
+    /* for (let i = 0; i < 10; i++) {
       ctx.lineWidth = 1 + i;
       ctx.beginPath();
       ctx.moveTo(5 + i * 14, 5);
       ctx.lineTo(5 + i * 14, 140);
       ctx.stroke();
-    }
+    } */
 
     /* ctx.fillStyle = "rgb(255, 221,0)"; // yellow;
     ctx.fillRect(0, 0, 150, 37.5);
