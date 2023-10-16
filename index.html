@@ -8,8 +8,19 @@
     <script src="script.js"></script>
   </head>
   <body onload="draw()">
-    <canvas id="tutorial" width="150" height="150"
-      >Текст который видно в браузерах, не поддерживающих канвас</canvas
-    >
+    <table>
+      <tr>
+        <td><canvas id="tutorial" width="150" height="150"></canvas></td>
+        <td>
+          Change the <code>miterLimit</code> by entering a new value below and
+          clicking the redraw button.<br /><br />
+          <form onsubmit="return draw();">
+            <label>Miter limit</label>
+            <input type="text" size="3" id="miterLimit" />
+            <input type="submit" value="Redraw" />
+          </form>
+        </td>
+      </tr>
+    </table>
   </body>
 </html>

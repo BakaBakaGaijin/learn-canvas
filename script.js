@@ -5,7 +5,36 @@ function draw() {
   if (canvas.getContext) {
     const ctx = canvas.getContext("2d");
 
-    const lineJoin = ["round", "bevel", "miter"];
+    // Clear canvas
+    ctx.clearRect(0, 0, 150, 150);
+
+    // Draw guides
+    ctx.strokeStyle = "#09f";
+    ctx.lineWidth = 2;
+    ctx.strokeRect(-5, 50, 160, 50);
+
+    // Set line styles
+    ctx.strokeStyle = "#000";
+    ctx.lineWidth = 10;
+
+    // check input
+    if (document.getElementById("miterLimit").value.match(/\d+(\.\d+)?/)) {
+      ctx.miterLimit = parseFloat(document.getElementById("miterLimit").value);
+    } else {
+      console.log("Value must be a positive number");
+    }
+
+    // Draw lines
+    ctx.beginPath();
+    ctx.moveTo(0, 100);
+    for (i = 0; i < 24; i++) {
+      var dy = i % 2 == 0 ? 25 : -25;
+      ctx.lineTo(Math.pow(i, 1.5) * 2, 75 + dy);
+    }
+    ctx.stroke();
+    return false;
+
+    /* const lineJoin = ["round", "bevel", "miter"];
     ctx.lineWidth = 10;
 
     for (let i = 0; i < lineJoin.length; i++) {
@@ -17,7 +46,7 @@ function draw() {
       ctx.lineTo(115, 45 + i * 40);
       ctx.lineTo(155, 5 + i * 40);
       ctx.stroke();
-    }
+    } */
 
     /* const lineCap = ["butt", "round", "square"];
 
@@ -279,3 +308,8 @@ function draw() {
     // для браузеров, не поддерживающих канвас
   }
 }
+
+document.getElementById("miterLimit").value = document
+  .getElementById("canvas")
+  .getContext("2d").miterLimit;
+draw();
