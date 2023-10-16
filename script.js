@@ -5,7 +5,21 @@ function draw() {
   if (canvas.getContext) {
     const ctx = canvas.getContext("2d");
 
-    const lineCap = ["butt", "round", "square"];
+    const lineJoin = ["round", "bevel", "miter"];
+    ctx.lineWidth = 10;
+
+    for (let i = 0; i < lineJoin.length; i++) {
+      ctx.lineJoin = lineJoin[i];
+      ctx.beginPath();
+      ctx.moveTo(-5, 5 + i * 40);
+      ctx.lineTo(35, 45 + i * 40);
+      ctx.lineTo(75, 5 + i * 40);
+      ctx.lineTo(115, 45 + i * 40);
+      ctx.lineTo(155, 5 + i * 40);
+      ctx.stroke();
+    }
+
+    /* const lineCap = ["butt", "round", "square"];
 
     ctx.strokeStyle = "#09f";
     ctx.beginPath();
@@ -23,7 +37,7 @@ function draw() {
       ctx.moveTo(25 + i * 50, 10);
       ctx.lineTo(25 + i * 50, 140);
       ctx.stroke();
-    }
+    } */
 
     /* for (let i = 0; i < 10; i++) {
       ctx.lineWidth = 1 + i;
