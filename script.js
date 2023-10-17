@@ -3,6 +3,25 @@ const canvas = document.body.querySelector("#tutorial");
 if (canvas.getContext) {
   const ctx = canvas.getContext("2d");
 
+  const conicGrad1 = ctx.createConicGradient(2, 62, 75);
+  conicGrad1.addColorStop(0, "#A7D30C");
+  conicGrad1.addColorStop(1, "#fff");
+
+  const conicGrad2 = ctx.createConicGradient(0, 187, 75);
+  conicGrad2.addColorStop(0, "black");
+  conicGrad2.addColorStop(0.25, "black");
+  conicGrad2.addColorStop(0.25, "white");
+  conicGrad2.addColorStop(0.5, "white");
+  conicGrad2.addColorStop(0.5, "black");
+  conicGrad2.addColorStop(0.75, "black");
+  conicGrad2.addColorStop(0.75, "white");
+  conicGrad2.addColorStop(1, "white");
+
+  ctx.fillStyle = conicGrad1;
+  ctx.fillRect(12, 25, 100, 100);
+  ctx.fillStyle = conicGrad2;
+  ctx.fillRect(137, 25, 100, 100);
+
   /* ctx.beginPath();
   ctx.arc(50, 50, 30, 0, Math.PI * 2, true);
   ctx.arc(50, 50, 15, 0, Math.PI * 2, true);
