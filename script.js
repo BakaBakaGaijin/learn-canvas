@@ -4,6 +4,12 @@ if (canvas.getContext) {
   const ctx = canvas.getContext("2d");
 
   ctx.font = "48px serif";
+  // ctx.textBaseline = "hanging";
+  // ctx.textBaseline = "top";
+  // ctx.textBaseline = "middle";
+  // ctx.textBaseline = "alphabetic";
+  // ctx.textBaseline = "bottom";
+  ctx.textBaseline = "ideographic";
   ctx.strokeText("Hello world", 10, 50);
 
   /* ctx.font = "48px serif";
