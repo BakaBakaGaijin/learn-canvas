@@ -3,7 +3,10 @@ const canvas = document.body.querySelector("#tutorial");
 if (canvas.getContext) {
   const ctx = canvas.getContext("2d");
 
-  const conicGrad1 = ctx.createConicGradient(2, 62, 75);
+  ctx.font = "48px serif";
+  ctx.fillText("Hello world", 10, 50);
+
+  /* const conicGrad1 = ctx.createConicGradient(2, 62, 75);
   conicGrad1.addColorStop(0, "#A7D30C");
   conicGrad1.addColorStop(1, "#fff");
 
@@ -20,7 +23,7 @@ if (canvas.getContext) {
   ctx.fillStyle = conicGrad1;
   ctx.fillRect(12, 25, 100, 100);
   ctx.fillStyle = conicGrad2;
-  ctx.fillRect(137, 25, 100, 100);
+  ctx.fillRect(137, 25, 100, 100); */
 
   /* ctx.beginPath();
   ctx.arc(50, 50, 30, 0, Math.PI * 2, true);
