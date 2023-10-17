@@ -3,7 +3,15 @@ const canvas = document.body.querySelector("#tutorial");
 if (canvas.getContext) {
   const ctx = canvas.getContext("2d");
 
-  const radgrad = ctx.createRadialGradient(45, 45, 10, 52, 50, 30);
+  /* const img = new Image(50, 50);
+  img.src = "image.avif";
+  img.onload = function () {
+    const ptrn = ctx.createPattern(img, "repeat");
+    ctx.fillStyle = ptrn;
+    ctx.fillRect(0, 0, 150, 150);
+  }; */
+
+  /* const radgrad = ctx.createRadialGradient(45, 45, 10, 52, 50, 30);
   radgrad.addColorStop(0, "#A7D30C");
   radgrad.addColorStop(0.9, "#019F62");
   radgrad.addColorStop(1, "rgba(1,159,98,0)");
@@ -30,7 +38,7 @@ if (canvas.getContext) {
   ctx.fillStyle = radgrad2;
   ctx.fillRect(0, 0, 150, 150);
   ctx.fillStyle = radgrad;
-  ctx.fillRect(0, 0, 150, 150);
+  ctx.fillRect(0, 0, 150, 150); */
 
   /* const lingrad = ctx.createLinearGradient(0, 0, 0, 150);
   lingrad.addColorStop(0, "#00ABEB");
