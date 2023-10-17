@@ -4,7 +4,10 @@ if (canvas.getContext) {
   const ctx = canvas.getContext("2d");
 
   ctx.font = "48px serif";
-  ctx.fillText("Hello world", 10, 50);
+  ctx.strokeText("Hello world", 10, 50);
+
+  /* ctx.font = "48px serif";
+  ctx.fillText("Hello world", 10, 50); */
 
   /* const conicGrad1 = ctx.createConicGradient(2, 62, 75);
   conicGrad1.addColorStop(0, "#A7D30C");
