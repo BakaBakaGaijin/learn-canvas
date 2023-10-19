@@ -10,7 +10,7 @@ if (canvas.getContext) {
   // ctx.textBaseline = "alphabetic";
   // ctx.textBaseline = "bottom";
   ctx.textBaseline = "ideographic";
-  ctx.strokeText("Hello world", 10, 50);
+  // ctx.strokeText("Hello world", 10, 50);
 
   /* ctx.font = "48px serif";
   ctx.fillText("Hello world", 10, 50); */
