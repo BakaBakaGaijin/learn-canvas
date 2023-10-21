@@ -3,7 +3,24 @@ const canvas = document.body.querySelector("#tutorial");
 if (canvas.getContext) {
   const ctx = canvas.getContext("2d");
 
-  const img = new Image();
+  ctx.fillRect(0, 0, 150, 150);
+  ctx.save();
+
+  ctx.fillStyle = "#09F";
+  ctx.fillRect(15, 15, 120, 120);
+  ctx.save();
+
+  ctx.fillStyle = "#FFF";
+  ctx.globalAlpha = 0.5;
+  ctx.fillRect(30, 30, 90, 90);
+
+  ctx.restore();
+  ctx.fillRect(45, 45, 60, 60);
+
+  ctx.restore();
+  ctx.fillRect(60, 60, 30, 30);
+
+  /* const img = new Image();
   img.src = "image.avif";
   img.onload = function () {
     for (let i = 0; i < 4; i++) {
@@ -11,7 +28,7 @@ if (canvas.getContext) {
         ctx.drawImage(img, j * 50, i * 38, 50, 38);
       }
     }
-  };
+  }; */
   /* const img = new Image();
   img.onload = function () {
     ctx.drawImage(img, 0, 0);
