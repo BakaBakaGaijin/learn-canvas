@@ -4,6 +4,15 @@ if (canvas.getContext) {
   const ctx = canvas.getContext("2d");
 
   const img = new Image();
+  img.src = "image.avif";
+  img.onload = function () {
+    for (let i = 0; i < 4; i++) {
+      for (let j = 0; j < 3; j++) {
+        ctx.drawImage(img, j * 50, i * 38, 50, 38);
+      }
+    }
+  };
+  /* const img = new Image();
   img.onload = function () {
     ctx.drawImage(img, 0, 0);
     ctx.beginPath();
@@ -13,7 +22,7 @@ if (canvas.getContext) {
     ctx.lineTo(170, 15);
     ctx.stroke();
   };
-  img.src = "image.avif";
+  img.src = "image.avif"; */
   /* ctx.font = "48px serif";
   // ctx.textBaseline = "hanging";
   // ctx.textBaseline = "top";
