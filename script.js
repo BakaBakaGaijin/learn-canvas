@@ -3,14 +3,25 @@ const canvas = document.body.querySelector("#tutorial");
 if (canvas.getContext) {
   const ctx = canvas.getContext("2d");
 
-  ctx.font = "48px serif";
+  const img = new Image();
+  img.onload = function () {
+    ctx.drawImage(img, 0, 0);
+    ctx.beginPath();
+    ctx.moveTo(30, 96);
+    ctx.lineTo(70, 66);
+    ctx.lineTo(103, 76);
+    ctx.lineTo(170, 15);
+    ctx.stroke();
+  };
+  img.src = "image.avif";
+  /* ctx.font = "48px serif";
   // ctx.textBaseline = "hanging";
   // ctx.textBaseline = "top";
   // ctx.textBaseline = "middle";
   // ctx.textBaseline = "alphabetic";
   // ctx.textBaseline = "bottom";
   ctx.textBaseline = "ideographic";
-  ctx.strokeText("Hello world", 10, 50);
+  ctx.strokeText("Hello world", 10, 50); */
 
   /* ctx.font = "48px serif";
   ctx.fillText("Hello world", 10, 50); */
