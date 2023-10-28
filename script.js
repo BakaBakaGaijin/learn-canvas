@@ -3,7 +3,23 @@ const canvas = document.body.querySelector("#tutorial");
 if (canvas.getContext) {
   const ctx = canvas.getContext("2d");
 
-  for (let i = 0; i < 3; i++) {
+  ctx.save();
+  ctx.fillStyle = "#0095DD";
+  ctx.fillRect(30, 30, 100, 100);
+
+  ctx.rotate((Math.PI / 180) * 25);
+  ctx.fillStyle = "#4D4E53";
+  ctx.fillRect(30, 30, 100, 100);
+  ctx.restore();
+
+  ctx.fillStyle = "#0095DD";
+  ctx.fillRect(150, 30, 100, 100);
+  ctx.translate(200, 80);
+  ctx.rotate((Math.PI / 180) * 25);
+  ctx.translate(-200, -80);
+  ctx.fillStyle = "#4D4E53";
+  ctx.fillRect(150, 30, 100, 100);
+  /* for (let i = 0; i < 3; i++) {
     for (let j = 0; j < 3; j++) {
       ctx.save();
       ctx.fillStyle = "rgb(" + 51 * i + ", " + (255 - 51 * i) + ", 255)";
@@ -11,7 +27,7 @@ if (canvas.getContext) {
       ctx.fillRect(0, 0, 25, 25);
       ctx.restore();
     }
-  }
+  } */
 
   /* ctx.fillRect(0, 0, 150, 150);
   ctx.save();
