@@ -4,6 +4,15 @@ if (canvas.getContext) {
   const ctx = canvas.getContext("2d");
 
   ctx.save();
+  ctx.scale(10, 3);
+  ctx.fillRect(1, 10, 10, 10);
+  ctx.restore();
+
+  ctx.scale(-1, 1);
+  ctx.font = "48px serif";
+  ctx.fillText("MDN", -135, 120);
+
+  /* ctx.save();
   ctx.fillStyle = "#0095DD";
   ctx.fillRect(30, 30, 100, 100);
 
@@ -18,7 +27,8 @@ if (canvas.getContext) {
   ctx.rotate((Math.PI / 180) * 25);
   ctx.translate(-200, -80);
   ctx.fillStyle = "#4D4E53";
-  ctx.fillRect(150, 30, 100, 100);
+  ctx.fillRect(150, 30, 100, 100); */
+
   /* for (let i = 0; i < 3; i++) {
     for (let j = 0; j < 3; j++) {
       ctx.save();
